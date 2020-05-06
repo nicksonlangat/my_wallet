@@ -1,0 +1,123 @@
+{% extends 'profiles/dashboard.html' %}
+
+{% block headcontent %}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cinzel|PT+Serif');
+        
+        body {
+            background-color: floralwhite;
+        }
+        h2 {
+            font-family: "PT Serif";
+        }
+
+        #side_panel
+        {
+            font-size: 16px;
+            font-family: "Titillium Web";
+            background-color: rgb(170, 95, 57);
+            margin-top: -7px;
+            margin-left: -10px;
+            height: 540px;
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+        
+        .side {
+            color: aliceblue;
+        }
+        .side:hover {
+            color: mediumaquamarine;
+        }
+        .warning {
+            color: yellow;
+        }
+        .danger {
+            color: #FF8723;
+            font-weight: 900;
+        }
+        .current {
+            border: 1px solid;
+            padding: 3px;
+        }
+        .curr_bal {
+            font-family: "Cinzel";
+            font-weight: 600;
+        }
+        .g-recaptcha {
+            width: 50px;
+        }
+        
+        #side_panel::-webkit-scrollbar {
+            width: 7px;
+        }
+        #side_panel::-webkit-scrollbar:hover {
+            width: 12px;
+        }
+        #side_panel::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+    </style>
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+{% block content %}
+            <br> <br>
+    <section id="welcome_post" class="col-9">   
+        <h3 style="font-weight: 300;" >Please Ensure:</h3>
+        <ul type="square">
+            <li>You have <a href="{% url 'profiles:money_transfer' %}">transfered your money</a> to a different account first. </li>
+            
+        </ul>
+
+        <h3 style="font-weight: 300;" >{{user}}, this cannot be undone. </h3>
+        
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete" >
+            Yes, Delete! 
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm deletion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        Enter password to confirm deletion
+                        <input type="password" class="form-control" required>
+                        <br>
+                        
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Take Me back! </button>
+                    <button type="submit" class="btn btn-danger">Delete my account</button>
+                    </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        
+        
+    </section>
+{% endblock %}
+
+{% block scriptcontent %}
+    <script>
+        $(".current").removeClass("current");
+        $("#delete").addClass("current");
+    </script>
+{% endblock %}

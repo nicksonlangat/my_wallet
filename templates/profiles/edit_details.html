@@ -1,0 +1,220 @@
+{% extends 'profiles/dashboard.html' %}
+
+{% block headcontent %}
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Cinzel|PT+Serif');
+            
+            body {
+                background-color: floralwhite;
+            }
+            h2 {
+                font-family: "PT Serif";
+            }
+
+            #side_panel
+            {
+                font-size: 16px;
+                font-family: "Titillium Web";
+                background-color: rgb(170, 95, 57);
+                margin-top: -7px;
+                margin-left: -10px;
+                height: 540px;
+                overflow-x: auto;
+                overflow-y: auto;
+            }
+            
+            .side {
+                color: aliceblue;
+            }
+            .side:hover {
+                color: mediumaquamarine;
+            }
+            .warning {
+                color: yellow;
+            }
+            .danger {
+                color: #FF8723;
+                font-weight: 900;
+            }
+            .current {
+                border: 1px solid;
+                padding: 3px;
+            }
+            .curr_bal {
+                font-family: "Cinzel";
+                font-weight: 600;
+            }
+            
+            #side_panel::-webkit-scrollbar {
+                width: 7px;
+            }
+            #side_panel::-webkit-scrollbar:hover {
+                width: 12px;
+            }
+            #side_panel::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            }
+        </style>
+        
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+{% block content %} 
+<br><br >
+    <section id="welcome_post" class="col-9">                
+        <h4 style="font-weight: 300;" >
+            {{user}}, Any Untruthful information may lead to a ban. 
+        </h4>
+        <br>
+        
+        <!-- EDIT BASIC DETAILS -->
+        <a href="#basic" class="btn btn-default btn-block" data-toggle="modal" data-target="#basic">Basic Details</a>
+        <div class="modal fade" id="basic" tabindex="-1" role="dialog" aria-labelledby="basic" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit basic details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form action="{ url 'profiles:edit_details' }" method="post" enctype="multipart/form-data" id="basic-form">
+                    <div class="modal-body">
+                        <!-- Name:
+                        <input type="text" class="form-control" placeholder="{{ user }}" disabled>
+                        Sex:
+                        <input type="text" class="form-control" placeholder="{{ user.sex }}" disabled>
+                        Email:
+                        <input type="email" class="form-control" placeholder="alimdrafi@gmail.com">
+                        Mobile number:
+                        <input type="number" class="form-control" placeholder="+919674639341">
+                        Date of birth:
+                        <input type="text" class="form-control" placeholder="10-11-1995" disabled>
+                        Annual income (₹):
+                        <input type="number" class="form-control" placeholder="75000" disabled>
+                        Occupation:
+                        <input type="email" class="form-control" placeholder="Student"> -->
+
+                        {% csrf_token %}
+                        {{ form1 }}
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-default">Update</button>
+                    </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        
+        
+        
+        <br> <br>
+        
+        <!-- EDIT PRESENT LOCATION -->
+        <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#location">Edit present location</button>
+        
+        <div class="modal fade" id="location" tabindex="-1" role="dialog" aria-labelledby="location" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit  location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form action="{ url 'profiles:edit_details' }" method="post" enctype="multipart/form-data" id="location">
+                    <div class="modal-body">
+                        {% csrf_token %}
+                        {{ form2 }}
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-default ">Update </button>
+                    </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        
+        <br> <br>
+        
+        <!-- EDIT ACCOUNT DETAILS -->
+        <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#account">Edit account details</button> 
+        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="account" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit account type</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Account type: <br>
+                    <input type="radio" checked> Savings
+                    <br>
+                    <span class="small">(The system doesn't allow editing of this part. Contact the admin. )</span>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        
+        <br> <br>
+        
+        <!-- EDIT PASSWORD -->
+        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#password">Modify password</button>
+        <div class="modal fade" id="password" tabindex="-1" role="dialog" aria-labelledby="password" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <!-- Enter previous password:
+                        <input type="password" class="form-control">
+                        Enter new password:
+                        <input type="password" class="form-control">
+                        Re-enter new password:
+                        <input type="password" class="form-control"> -->
+                        {% csrf_token %}
+                        {{ form3 }}
+                        
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Update password</button>
+                    </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>    
+        
+    </section>
+{% endblock %}
+
+{% block scriptcontent %}
+    <script>
+        $(".current").removeClass("current");
+        $("#details").addClass("current");
+
+        $("input").addClass("form-control");
+        $("input[type=radio]").removeClass("form-control");
+    </script>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'profiles/dashboard.html' %}
+
+{% block headcontent %}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cinzel|PT+Serif');
+        
+        body {
+            background-color: floralwhite;
+        }
+        h2 {
+            font-family: "PT Serif";
+        }
+        h5 {
+            font-weight: 400;            }
+
+        #side_panel
+        {
+            font-size: 16px;
+            font-family: "Titillium Web";
+            background-color: rgb(170, 95, 57);
+            margin-top: -7px;
+            margin-left: -10px;
+            height: 540px;
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+        
+        .side {
+            color: aliceblue;
+        }
+        .side:hover {
+            color: mediumaquamarine;
+        }
+        .warning {
+            color: yellow;
+        }
+        .danger {
+            color: #FF8723;
+            font-weight: 900;
+        }
+        .current {
+            border: 1px solid;
+            padding: 3px;
+        }
+        .curr_bal {
+            font-family: "Cinzel";
+            font-weight: 600;
+        }
+        
+        #side_panel::-webkit-scrollbar {
+            width: 7px;
+        }
+        #side_panel::-webkit-scrollbar:hover {
+            width: 12px;
+        }
+        #side_panel::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+    </style>
+{% endblock %}
+        
+{% block content %}
+<br><br >
+    <section id="welcome_post" class="col-9">
+        <h4 style="font-weight: 300;" >
+            Wallet 
+            <input type="text" class="form-control" value="Big Cash" disabled> <br>
+            
+            Wallet User 
+            <input type="text" class="form-control" value="{{user}} " disabled> <br>
+            
+            Account type <br>
+            <h6><input type="radio" checked> Savings</h6><br >
+            
+
+<a class='btn btn-default btn-sm' href="{% url 'profiles:edit_details' %}" class="side warning" id="details">Edit account details</a><br><br>
+<a class ='btn btn-danger btn-sm' href="{% url 'profiles:delete_account' %}" class="side danger" id="delete">Delete account</a>      
+        </h4>
+    </section>
+{% endblock %}
+
+{% block scriptcontent %}
+    <script>
+        $(".current").removeClass("current");
+        $("#settings").addClass("current");
+    </script>
+{% endblock %}

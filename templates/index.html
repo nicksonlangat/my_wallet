@@ -1,0 +1,581 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+	{% load static %} 
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Big Cash Investment Platform </title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %} ">
+
+</head>
+
+<body>
+<!-- site header -->
+<header id="site-header" class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="{%url 'profiles:home' %}">
+          <span class="fa fa-shield"></span>Big Cash
+      </a>
+      <button class="navbar-toggler bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{%url 'profiles:home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{%url 'profiles:account_status' %}">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="# ">Privacy</a>
+              </li>
+              {% endif %}
+          </ul>
+          
+      </div>
+  </nav>
+</header>
+<!-- //site header -->
+
+<!-- banner section -->
+<section id="home" class="banner">
+    <div id="banner-bg-effect" class="banner-effect"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12 col-sm-12 order-lg-first mt-lg-0 mt-4">
+                <h1 class="mb-4 title"><strong>Join </strong> the most secure online , <br>wallet <strong> platform.</strong>
+                </h1>
+                <p>BIG CASH Wallet System securely keeps your most confidential financial records safely within its highly encrypted servers to give you a piece of mind while sending and receiving money.</p>
+                {% if user.is_authenticated %}
+                {% else%} 
+                 <div class="mt-5">
+                    <a class="btn btn-primary btn-style mr-2" href="{% url 'signup' %} ">Register </a>
+                    <a class="btn btn-outline btn-outline-style" href="{% url 'login' %}" >Login</a>
+                </div>
+              {% endif %} 
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 order-first text-lg-left text-center">
+                <div>
+                    <img src="{% static 'assets/images/banner-round.png' %} " alt="" class="rounded-circle img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //banner section -->
+
+<!-- home page about -->
+<section class="w3l-about">
+    <div class="container">
+        <div class="row about-content">
+            <div class="col-lg-6 info mb-lg-0 mb-sm-5 mb-4 align-center">
+                <h3 class="title">About Us</h3>
+                <h6>Business planning, Strategy and Execution. A problem-solving philosophy that leads to</h6>
+                <p class="mt-md-4 mt-3 mb-0"> Business planning, Strategy and Execution. A problem-solving philosophy that leads to
+                    products people actually want to use.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'assets/images/about.png' %} " class="img-fluid img-shadow" alt="about">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /mobile section --->
+<section class="w3l-mobile-content-6">
+    <div class="mobile-info">
+        <!-- /mobile-info-->
+        <div class="container">
+            <div class="row mobile-info-inn mx-lg-0">
+                <div class="col-lg-4 mobile-right">
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-users"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">For Investors</a></h6>
+                            <p>An opportunity to gain monthly investment returns through supporting a pool of loan requests available in the platform.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids mb-lg-5 mb-4">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-users"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">For Borrowers</a></h6>
+                            <p>Get quick loans covered by our investor community with flexible payment terms and fast approval.</p>
+                        </div>
+                    </div>
+                    <div class="row mobile-right-grids">
+                        <div class="col-2 mobile-right-icon">
+                            <div class="mobile-icon">
+                                <span class="fa fa-users"></span>
+                            </div>
+                        </div>
+                        <div class="col-10 mobile-right-info">
+                            <h6><a href="#url">For Business</a></h6>
+                            <p>They can be our sponsors or investors. They can be borrowers and get quick loans covered by our investor community with flexible payment terms and fast approval.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                        
+    </div>
+    </div>
+</section>
+<!-- about page form section -->
+<!-- //home page about -->
+
+<!-- home page service grids -->
+<section id="services" class="bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+        <h4 class="section-title">We got your back. </h4>
+        <p class="text-center">Our users step in to assist you when you need us the most. </p>
+      </div>
+    </div>
+    <div class="row mt-lg-5">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="box-wrap">
+          <div class="icon">
+            <span class="fa fa-briefcase"></span>
+          </div>
+          <h4><a href="#url">Pay Off Credit Card Debt</a></h4>
+          <p>Pay off your credit card debt with a loan and save money with an affordable, fixed interest rate..</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="box-wrap">
+          <div class="icon">
+            <span class="fa fa-shield"></span>
+          </div>
+          <h4><a href="#url">Make Home Improvements</a></h4>
+          <p>As opposed to traditional bank loans, Big Cash home loans are based solely on your credit worthiness, and NOT the value of your house. This will give you the flexiblity you deserve.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="box-wrap">
+          <div class="icon">
+            <span class="fa fa-dollar"></span>
+          </div>
+          <h4><a href="#url">Cover Major Expenses</a></h4>
+          <p>Whether it's a new car, TV or furniture, Big Cash provides great financing options.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="box-wrap">
+          <div class="icon">
+            <span class="fa fa-industry"></span>
+          </div>
+          <h4><a href="#url">Debt Consolidation</a></h4>
+          <p>Pay off multiple bills in a single and simple payment.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="box-wrap">
+          <div class="icon">
+            <span class="fa fa-picture-o"></span>
+          </div>
+          <h4><a href="#url">Projects Worldwide</a></h4>
+          <p>Big Cash has its eyes on the larger worldwide market. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- //home page service grids -->
+<section class="w3l-features">
+    <div class="call-w3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                    <h4 class="section-title">How it works </h4>
+                    <p class="text-center">There are many variations of passages of Lorem Ipsum available, but the majority
+                        have
+                        suffered alteration in some form, by injected humour</p>
+                </div>
+            </div>
+            <div class="row main-cont-wthree-2 mt-5">
+                <div class="col-lg-6 feature-grid-left order2 mt-lg-0 mt-sm-5 mt-4">
+                    <h4 class="title-left">Borrower Evaluation</h4>
+                    <p class="text-para">Registered borrowers are evaluated  for loan qualification. </p>
+                    <a href="#readmore" class="btn btn-primary btn-style mt-4">Get Started</a>
+                </div>
+                <div class="col-lg-6 feature-grid-right order1">
+                    <img src="{% static 'assets/images/s1.png' %} " class="img-fluid img-shadow" alt="services">
+                </div>
+            </div>
+            <div class="row main-cont-wthree-2 mt-5">
+                <div class="col-lg-6 feature-grid-right">
+                    <img src="{% static 'assets/images/s2.png' %} " class="img-fluid img-shadow" alt="services">
+                </div>
+                <div class="col-lg-6 feature-grid-left mt-lg-0 mt-sm-5 mt-4">
+                    <h4 class="title-left">Invest</h4>
+                    <p class="text-para">Lenders  review loan requests and choose loans to finance based on their preferred terms and timeline.</p>
+                    <a href="#readmore" class="btn btn-primary btn-style mt-4">Get Started</a>
+                </div>
+            </div>
+            <div class="row main-cont-wthree-2 mt-5">
+                <div class="col-lg-6 feature-grid-left order2 mt-lg-0 mt-sm-5 mt-4">
+                    <h4 class="title-left">Repayment Collection</h4>
+                    <p class="text-para">borrowers repay loan through multiple installments to lenders with shariah compliant returns. </p>
+                    <a href="#readmore" class="btn btn-primary btn-style mt-4">Get Started</a>
+                </div>
+                <div class="col-lg-6 feature-grid-right order1">
+                    <img src="{% static 'assets/images/s1.png' %} " class="img-fluid img-shadow" alt="services">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- services page block 1 -->
+
+<!-- testimonials section -->
+<section id="slider" class="testimonials">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+                <h4 class="section-title">What our users say </h4>
+                <p class="text-center">The following user testimonials confirm the efficiency of the platform in providing financial support in times of need. </p>
+            </div>
+        </div>
+        <div class="large-12 columns mt-5">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="w3l-customers-7">
+                        <div class="customers_sur">
+                            <div class="customers-left_sur">
+                                <div class="customers_grid">
+                                    <div class="custo-img-res">
+                                        <img src="{% static 'assets/images/testi1.jpg' %} " alt=" " class="">
+                                    </div>
+                                    <div class="ratings my-4 my-4">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>I was able to get assistance with tremendous community support. </p>
+                                    <div class="customers-bottom_sur">
+                                        <div class="custo_grid">
+                                            <h5>Tanguy De</h5>
+                                            <span>User </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="w3l-customers-7">
+                        <div class="customers_sur">
+                            <div class="customers-left_sur">
+                                <div class="customers_grid">
+                                    <div class="custo-img-res">
+                                        <img src="{% static 'assets/images/testi2.jpg' %} " alt=" " class="img-fluid">
+                                    </div>
+                                    <div class="ratings my-4">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>My loan was approved within no time! </p>
+                                    <div class="customers-bottom_sur">
+                                        <div class="custo_grid">
+                                            <h5>Christopher</h5>
+                                            <span>User </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="w3l-customers-7">
+                        <div class="customers_sur">
+                            <div class="customers-left_sur">
+                                <div class="customers_grid">
+                                    <div class="custo-img-res">
+                                        <img src="{% static 'assets/images//testi3.jpg' %} " alt=" " class="img-fluid">
+                                    </div>
+                                    <div class="ratings my-4">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>The platform is a life saver.</p>
+                                    <div class="customers-bottom_sur">
+                                        <div class="custo_grid">
+                                            <h5>Edward</h5>
+                                            <span>User </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="w3l-customers-7">
+                        <div class="customers_sur">
+                            <div class="customers-left_sur">
+                                <div class="customers_grid">
+                                    <div class="custo-img-res">
+                                        <img src="{% static 'assets/images//testi4.jpg' %} " alt=" " class="img-fluid">
+                                    </div>
+                                    <div class="ratings my-4">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>Always a proud member. </p>
+                                    <div class="customers-bottom_sur">
+                                        <div class="custo_grid">
+                                            <h5>Abigail</h5>
+                                            <span>User</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="w3l-customers-7">
+                        <div class="customers_sur">
+                            <div class="customers-left_sur">
+                                <div class="customers_grid">
+                                    <div class="custo-img-res">
+                                        <img src="{% static 'assets/images//testi5.jpg' %} " alt=" " class="img-fluid">
+                                    </div>
+                                    <div class="ratings my-4">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p>Spread the word out there. </p>
+                                    <div class="customers-bottom_sur">
+                                        <div class="custo_grid">
+                                            <h5>Abigail</h5>
+                                            <span>User </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//testimonials section -->
+
+<!-- stats section -->
+<section id="stats" class="stats">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 margin-md-60">
+                <h2 class="left-title">Platform  Facts.</h2>
+                <p class="white">Big Cash is platform that makes it easy to create powerful peer-to-peer fundraising initiatives on your the world wide web. 
+It empowers individuals and teams to recruit new constituents and fundraise in support of their organizations.</p>
+            </div>
+            <div class="col-lg-7 mt-lg-0 mt-5">
+                <div class="d-sm-flex justify-content-lg-around justify-content-between counter-main">
+                    <div class="counter">
+                        <div class="icon">
+                            <span class="fa fa-users"></span>
+                        </div>
+                        <p class="value">385</p>
+                        <p class="title white">Active Users</p>
+                    </div>
+                    <div class="counter">
+                        <div class="icon">
+                            <span class="fa fa-headphones"></span>
+                        </div>
+                        <p class="value">260</p>
+                        <p class="title white">Consultants</p>
+                    </div>
+                    <div class="counter">
+                        <div class="icon">
+                            <span class="fa fa-trophy"></span>
+                        </div>
+                        <p class="value">150</p>
+                        <p class="title white">Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //stats section -->
+
+
+
+<!-- site footer -->
+<footer id="site-footer">
+  <div class="top-footer">
+    <div class="container my-md-5 my-4">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="footer-logo mb-3">
+            <a href="{%url 'profiles:home' %}">
+              <span class="fa fa-shield"></span> Big Cash 
+            </a>
+          </div>
+          <div>
+            <p class="">Your caring financial partners.</p>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-4 mt-lg-0 mt-5">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="# "> About company</a></li>
+            <li><a href="# "> Explore services</a></li>
+            <li><a href="#"> How It Works?</a></li>
+            
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-5 col-md-8 mt-lg-0 mt-5">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="mb-4">By subscribing to our mailing list you will always be updated with the latest news from us.
+          </p>
+          <form class="newsletter-form">
+            <input class="input-rounded" type="text" required="" placeholder="Enter Email Address">
+            <button type="submit" title="Subscribe" class="btn btn-primary btn-style" name="submit" value="Submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 text-lg-left text-center mb-lg-0 mb-3">
+          <p class="copyright">© 2020 Big Cash . All Rights Reserved. Design by <a
+            href="nickyadams.pythonanywhere.com/portfolio/">RealNickyAdams</a></p>
+        </div>
+        <div class="col-lg-4 align-center text-lg-right text-center">
+          <a href="#facebook" class="social-item"><span class="fa fa-facebook-f"></span></a>
+          <a href="#twitter" class="social-item"><span class="fa fa-twitter"></span></a>
+          <a href="#linkedin" class="social-item"><span class="fa fa-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- //site footer -->
+
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+  <span class="fa fa-angle-up"></span>
+</button>
+
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction()
+  };
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("movetop").style.display = "block";
+    } else {
+      document.getElementById("movetop").style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+<!-- //move top -->
+
+<!-- javascript -->
+<script src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
+
+<!-- libhtbox -->
+<script src="{% static 'assets/js/lightbox-plus-jquery.min.js' %} "></script>
+
+<!-- particles -->
+<script src='{% static "assets/js/particles.min.js" %} '></script>
+<script src="{% static 'assets/js/script.js' %} "></script>
+<!-- //particles -->
+
+<!-- owl carousel -->
+<script src="{% static 'assets/js/owl.carousel.js' %} "></script>
+<script>
+  $(document).ready(function () {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      margin: 10,
+      nav: true,
+      loop: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        767: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  })
+</script>
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!-- bootstrap -->
+<script src="{% static 'assets/js/bootstrap.min.js' %} "></script>
+
+</body>
+</html>
