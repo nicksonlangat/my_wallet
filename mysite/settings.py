@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'accounts', 
     'core', 
     'profiles', 
-    'crispy_forms', 
+   # 'crispy_forms', 
 ]
 
 MIDDLEWARE = [
@@ -133,4 +133,4 @@ MEDIA_URL	=	'/media/'
 MEDIA_ROOT	=	os.path.join(BASE_DIR,	'media/')
 LOGIN_REDIRECT_URL = 'profiles:account_status'
 LOGOUT_REDIRECT_URL ='profiles:home'
-CRISPY_TEMPLATE_PACK ='bootstrap4' 
+#CRISPY_TEMPLATE_PACK ='bootstrap4' 

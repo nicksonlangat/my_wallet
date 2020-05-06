@@ -1,24 +1,12 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock %}
+
 {% block content %}
-<div class="content-section" >
-  <strong>Create An Account. </strong>
+  <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
-    <fieldset class="form-group" >
-        <legend class ="border-bottom mb-4">
-            Join Big Cash Today.
-        </legend>
-        {{ form|crispy}}
-    </fieldset>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">Sign Up.</button>
-    </div>
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
   </form>
-  <div class="boarder-top pt-3">
-      <small class="text-muted">
-          Already have an account? <a class="ml-2" href="{% url 'login' %} ">Log In</a>
-      </small>
-  </div>
-</div>
 {% endblock %}
