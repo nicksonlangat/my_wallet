@@ -38,7 +38,7 @@ def register(request):
           return redirect('login')
     else:
       messages.error(request, 'Passwords do not match')
-      return redirect('register')
+      return redirect('signup')
   else:
     return render(request, 'registration/signup.html')
 
@@ -52,7 +52,7 @@ def login(request):
     if user is not None:
       auth.login(request, user)
       messages.success(request, 'You are now logged in')
-      return redirect('profiles:account_status')
+      return redirect('profiles:home')
     else:
       messages.error(request, 'Invalid credentials')
       return redirect('login')
