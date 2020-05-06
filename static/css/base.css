@@ -1,0 +1,150 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4 {
+  color: #66004d;
+}
+h5, h6{
+	color: #006666;
+} 
+h3{
+	text-align: center ;
+} 
+button.btm{
+	padding: 5px 2px 2px; 
+	border: 3px solid #990099;
+	text-align: center;
+	border-radius: 5px;
+	
+} 
+#inpt{
+	padding: 5px 2px 2px; 
+	border: 3px solid #990099;
+	text-align: center;
+	border-radius: 5px;
+	
+} 
+hr.new1 {
+  border-top: 1px solid #ff0066;
+}
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #66004d;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #ccffff;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffcc00;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #006666;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 300px;
+  width: 300px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 1.5rem;
+}
+.logged{
+  text-transform: uppercase;
+  
+	
+} 
+.edit{
+	background-color:#f44336;
+	color:white;
+	padding:
+	text-align:center ;
+	text-decoration:none ;
+	display:inline-block ;
+	
+	 
+} 
+.rounded-circle account-img{
+	height:300px;
+	width:300px;
+} 
+.gift {
+	background-color: #006666;
+  box-shadow: 0 5px 0 darkred;
+  border-radius:100%;
+  color: white;
+  padding: 0.5em 1em;
+  position: relative ;
+  text-decoration: none;
+  text-transform: uppercase;
+  right :-45%;
+  top:-5px;
+} 
+.gift:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+.gift :active {
+	box-shadow:none;
+	top:5px;
+	
+} 
+.glow {
+  font-size: 9pt;
+  color: #99ccff;
+} 
