@@ -1,4 +1,4 @@
-{% extends 'profiles/profile_base_layout.html' %}
+{% extends 'profiles/dashboard.html' %}
 
 {% block headcontent %}
     <style>
@@ -62,17 +62,17 @@
     </style>
 {% endblock %}
         
-{% block bodycontent %}
+{% block content %}
             <br> <br>
     <section id="welcome_post" class="col-9">
         <h2>Hello,<span id="prof_name">{{ user }}.</span> </h2>
         <h4 style="font-weight: 300;">Welcome to the transactions page.</h4><br >
 
-        <form action="{% url 'profiles:account_status' %}" method="post">
+        <form action="{% url 'profiles:money_transfer' %}" method="post">
             {% csrf_token %}
 
             <h3 style="font-weight: 300;">
-                {{ form }}
+                {{ form.as_p }}
             </h3>
             
             <small>I agree to the <a href="#">Terms and Conditions</a> of amount transfer</small>. <br>

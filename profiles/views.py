@@ -22,7 +22,7 @@ def index(request):
         # if no details exist (new user), create new details
         curr_user = Status()
         curr_user.account_number = randomGen() # random account number for every new user
-        curr_user.balance = 10000
+        curr_user.balance = 100
         curr_user.user_name = request.user
         curr_user.save()
     return render(request, "profiles/profile.html", {"curr_user": curr_user})
@@ -52,7 +52,7 @@ def money_transfer(request):
 
             temp.delete() # NOTE: Now deleting the instance for future money transactions
 
-        return redirect("profiles/profile.html")
+        return redirect("profiles:account_status")
     else:
         form = forms.MoneyTransferForm()
     return render(request, "profiles/money_transfer.html", {"form": form})
